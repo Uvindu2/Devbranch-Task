@@ -16,10 +16,11 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   login(data:any){
-   
+   //user login
     return this.httpClient.post(this.url,data);
   }
   logOut(){
+    //user logout
     this.session=sessionStorage.getItem('token');
    const token=this.session.replaceAll('"', '');
    const head_obj=new HttpHeaders().set("Authorization","Bearer "+token);
